@@ -1,0 +1,19 @@
+<aura:component controller="ParqueController">
+    
+    <aura:attribute name="parques" type="String[]"/>
+    
+    <h1 class="slds-text-heading_medium border-bottom-filtro">Consulte parques disponíveis selecionando um país</h1>
+    <div id="botao-direita">
+        <lightning:select aura:id="pais" name="pais" label="Selecione o país" required="true">
+            <option value="">Escolha uma...</option>
+            <option value="Germany">Alemanha</option>
+            <option value="India">India</option>
+            <option value="Japan">Japão</option>
+            <option value="United States">Estados Unidos</option>
+        </lightning:select>
+        <lightning:button variant="brand" label="Consultar" onclick="{!c.consultaParques}" />
+    </div>
+    <aura:iteration items="{!v.parques}" var="parque">
+        <p>• {!parque}</p>
+    </aura:iteration>
+</aura:component>

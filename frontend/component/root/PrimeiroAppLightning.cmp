@@ -1,0 +1,5 @@
+<aura:component>
+    <c:Calculadora/>
+    <hr></hr>
+    <c:Parque/>
+</aura:component>

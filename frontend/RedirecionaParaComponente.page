@@ -1,0 +1,20 @@
+<apex:page standardController="Opportunity">
+    <!-- This loads the JavaScript file needed to use Lightning Components for Visualforce-->
+    <apex:includeLightning />
+    
+    <!-- div tag act as locator while calling Lightning.createComponent -->
+    <div id="lightning" />
+    
+    <script>
+    var opportunityId = "{!$CurrentPage.parameters.id}";
+    $Lightning.use("c:SampleLightningApp", function() {
+        
+        $Lightning.createComponent(
+            "c:PrimeiroAppLightning",
+            {},
+            "lightning",  
+            function(cmp) {}
+        );
+    });
+    </script>
+</apex:page>

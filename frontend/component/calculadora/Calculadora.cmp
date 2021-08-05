@@ -1,0 +1,23 @@
+<aura:component controller="CalculadoraController">
+    
+    <aura:attribute name="numero1" type="Double"/>
+    <aura:attribute name="numero2" type="Double"/>
+    <aura:attribute name="resultado" type="String" default=""/>
+    
+    <h1 class="slds-text-heading_medium border-bottom-filtro">Calculadora</h1>
+    
+    <lightning:input value="{!v.numero1}" type="number" name="numero1" label="Digite o primeiro número" />
+    <lightning:input value="{!v.numero2}" type="number" name="numero2" label="Digite o segundo número" />
+    
+    <lightning:select aura:id="operacao" name="operacao" label="Selecione a operação" required="true">
+        <option value="">Escolha uma...</option>
+        <option value="soma">Somar</option>
+        <option value="subtracao">Subtrair</option>
+        <option value="multiplicacao">Multiplicar</option>
+        <option value="divisao">Dividir</option>
+    </lightning:select>
+    <br></br>
+    <lightning:button variant="brand" label="Calcular" onclick="{!c.calcula}" />
+    <br></br><br></br>
+    <h2>{!v.resultado}</h2>
+</aura:component>
